@@ -1,0 +1,45 @@
+@import '~antd/dist/antd.css';
+
+.calculatorBg {
+  margin: 0 auto;
+  padding: 20px;
+  background: #37352c;
+  width: 440px;
+}
+.calculatorUnit {
+  display: inline-flex;
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  padding: 25px;
+  background: #fdf1bf;
+  border:1px solid black;
+  border-radius: 0 !important;
+}
+
+.calculatorUnit:hover, .calculatorEnter:hover {
+  background: #64d8ab;
+}
+
+.calculatorValue {
+  justify-content: center;
+  width: 400px;
+  height: 48px;
+  background: #5b646e;
+  font-size: 30px;
+  padding-right: 15px;
+  text-align: right;
+  border: 2px solid #64d8ab;
+}
+
+.calculatorEnter {
+  height: 100px;
+  width: 300px;
+  background: #64d8ab;
+  font-size: 30px;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
