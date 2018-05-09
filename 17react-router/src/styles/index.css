@@ -1,0 +1,98 @@
+.header {
+    background-color: #4154af;
+    height: 90px;
+    padding: 10px;
+}
+.header-logo {
+    margin-top: -15px;
+    margin-left: 30px;
+    width: 75px;
+    display: inline-block;
+    text-align: left;
+}
+.header-text {
+    color: #ffffff;
+    font-size: 40px;
+    display: inline-block;
+    margin-left: 80px;
+}
+
+
+.leftNavContainer {
+    display: block;
+    height: 100%;
+    width: 200px;
+    background-color: #4154af;
+    padding: 15px;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+
+.rightContentContainer {
+    margin-top: 50px;
+    margin-left: 250px;
+    width: 80%;
+}
+
+
+
+li.navList {
+    list-style-type: none;
+    margin-left: -35px;
+    padding: 10px;
+    text-align: center;
+}
+
+li.navList:hover{
+    text-decoration: none;
+    color: #f1f1f1;
+    background: #0a239b;
+    border-radius: 5px;
+}
+
+a.navLink {
+    text-decoration: none;
+    font-size: 18px;
+    color: #ffffff;
+}
+a.activeNavLink {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    list-style-type: none;
+    color: #ffffff;
+    background: #0a239b;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.accountListContainer {
+  list-style-type: none;
+  text-decoration: none;
+  margin: 10px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.accountList {
+  float: left;
+}
+
+.activeAccountLink {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  list-style-type: none;
+  padding: 10px;
+}
+
+.accountLink:hover{
+    text-decoration: none;
+}
+.unicorn {
+    padding-left: 0px;
+    margin-left: 12px;
+    width: 80px;
+    margin-top: 20px;
+}
