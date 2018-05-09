@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import configureStore from './store/configureStore';
-import Login from './components/Login';
+import App from './App';
 import './index.css';
+import '../node_modules/toastr/build/toastr.min.css';
+
 
 const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <Login />
+    <App />
   </Provider>,
   document.getElementById('root'));

@@ -18,6 +18,9 @@ export default function reducer(state=initialState, action) {
         loginError: action.loginError
       });
 
+    case types.LOGOUT:
+      return initialState;
+
     default:
       return state;
   }

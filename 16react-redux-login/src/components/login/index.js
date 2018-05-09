@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import toastr from 'toastr';
+import { Redirect } from "react-router-dom";
 
-import * as loginActions from '../actions/loginActions';
+import * as loginActions from '../../actions/loginActions';
 import LoginForm from './LoginForm';
 import LoginIntro from './LoginIntro';
 import LoginInfo from './LoginInfo';
@@ -32,15 +34,27 @@ class Login extends React.Component {
     e.preventDefault();
     const { email, password } = this.state;
     this.props.actions.login(email, password);
-    this.setState({
-      email: '',
-      password : ''
-    })
+  }
+
+
+  componentDidUpdate() {
+    const { isLoginSuccess } = this.props;
+    if (isLoginSuccess) {
+      localStorage.setItem('userToken', this.state.email)
+      this.props.history.push("/account");
+      toastr["success"]("Login successfully!")
+    }
   }
 
   render() {
     const { email, password } = this.state;
     const { isLoginPending, isLoginSuccess, loginError } = this.props;
+
+    const { target } = this.props.location.state || { target: {pathname: '/account'} };
+        if (isLoginSuccess) {
+            return <Redirect to={target}/>;
+        }
+
     return (
       <div className='container-fluid'>
         <LoginIntro />
