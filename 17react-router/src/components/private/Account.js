@@ -37,12 +37,6 @@ const Account = ({match}) => {
           <Link className='btn btn-primary' to={'/logout'}>Sign Out</Link>
       </div>
   );
-
-
-
-
-
-
 };
 
 export default Account;

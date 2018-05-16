@@ -38,7 +38,6 @@ class LoginForm extends React.Component {
                             type="string"
                             placeholder="Email"
                             size={{length: 40}}
-                            onChange={this.onHandleLastNameChange}
                         />
 
                         <ControlLabel>Password</ControlLabel>
@@ -46,7 +45,6 @@ class LoginForm extends React.Component {
                             type="password"
                             placeholder="Password"
                             length={'40px'}
-                            onChange={this.onHandleLastNameChange}
                         />
 
                         <Button className='btn btn-primary mt-3' onClick={this.login}>Sign in</Button>
