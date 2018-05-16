@@ -44,11 +44,9 @@ li.navList {
     text-align: center;
 }
 
-li.navList:hover{
+.navList:hover{
     text-decoration: none;
-    color: #f1f1f1;
-    background: #0a239b;
-    border-radius: 5px;
+    font-weight: bold;
 }
 
 a.navLink {

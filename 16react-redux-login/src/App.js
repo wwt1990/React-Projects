@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Login from './components/login';
 import PrivateRoute from './components/private/PrivateRoute';
@@ -11,10 +10,11 @@ class App extends Component {
     return (
       <Router>
         <div>
-        <Switch>
-          <Route path='/login' component={Login} />
-          <PrivateRoute path='/account' component={Account} />
-        </Switch>
+          <Switch>
+            <Route exact path='/' component={Login} />
+            <Route path='/login' component={Login} />
+            <PrivateRoute path='/account' component={Account} />
+          </Switch>
         </div>
       </Router>
     );
