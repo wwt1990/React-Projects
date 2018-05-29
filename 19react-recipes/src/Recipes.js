@@ -22,7 +22,36 @@ class Recipes extends Component {
   }
 
   componentWillMount() {
-		this.setState({ recipes: initialRecipes });
+		if (!localStorage.getItem('firstTimeRecipesLoad')) {
+			localStorage.setItem('firstTimeRecipesLoad', 'true');
+			for (var i = 0; i < initialRecipes.length; i++) {
+				localStorage.setItem(initialRecipes[i].title, initialRecipes[i].description)
+			}
+		}
+		this.showAllRecipes();
+	}
+
+	showAllRecipes() {
+		// this.setState({ recipes: initialRecipes })
+		var keys = [];
+		for (var i = 0; i < localStorage.length; i++) {
+			keys[i] = localStorage.key(i);
+		}
+		for (var j = 0; j < keys.length; j++) {
+			if (keys[j] === 'firstTimeRecipesLoad') {
+				keys.splice(j, 1);
+			}
+		}
+
+    var recipes = [];
+		for (var k = 0; k < keys.length; k++) {
+			recipes.push({
+				title: keys[k],
+				description: localStorage.getItem(keys[k])
+			});
+		}
+		this.setState({ recipes });
+
 	}
 
 	componentDidMount() {
@@ -46,6 +75,11 @@ class Recipes extends Component {
   }
 
   addRecipe(newRecipe) {
+		if (!this.state.isEditing && this.state.recipes.find(recipe => recipe.title === newRecipe.title)) {
+			alert (`Recipe "${newRecipe.title}" alreay exists!`);
+			return;
+		}
+
     const newDescription = newRecipe.description.replace(/•\s/g, '');
     newRecipe.description = newDescription;
 		const newRecipes = [
