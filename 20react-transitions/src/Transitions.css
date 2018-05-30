@@ -1,0 +1,28 @@
+.transitionBox {
+  border: 1px solid #F8F4A6;
+  transition: border 150ms ease-in;
+}
+
+.transitionBox:hover {
+  border: 1px solid #FF5E33;
+  transition: border 150ms ease-in;
+}
+
+
+.fadeDiv-enter {
+  opacity: 0.01;
+}
+
+.fadeDiv-enter.fadeDiv-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+
+.fadeDiv-leave {
+  opacity: 1;
+}
+
+.fadeDiv-leave.fadeDiv-leave-active {
+  opacity: 0.01;
+  transition: opacity 1000ms ease-in;
+}
